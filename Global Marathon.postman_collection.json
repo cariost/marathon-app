@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "f408e147-977e-4b32-b9d8-16930b006f4c",
+		"name": "Global Marathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local Marathon API",
+			"item": [
+				{
+					"name": "Backend: Marathons API",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/marathon-app/v1/marathons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"marathon-app",
+								"v1",
+								"marathons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Backedn: Results API",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiMTAwODMxZC00NjgzLTQ0NWUtYjZiZC0wMmMzY2ZhMTZmZGEifQ.-UU5qRh1uDuKo7sFEtGYxplUO57BhRey5e0eA722xOM",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/marathon-app/v1/results",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"marathon-app",
+								"v1",
+								"results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Backedn: Retrieve Result API",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiMTAwODMxZC00NjgzLTQ0NWUtYjZiZC0wMmMzY2ZhMTZmZGEifQ.-UU5qRh1uDuKo7sFEtGYxplUO57BhRey5e0eA722xOM",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/marathon-app/v1/results/264100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"marathon-app",
+								"v1",
+								"results",
+								"264100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Result API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"age\": 34,\n    \"bib\": \"36269\",\n    \"city\": \"Alpharetta\",\n    \"country\": \"PER\",\n    \"firstName\": \"Cesar\",\n    \"gender\": \"m\",    \n    \"lastName\": \"Rios\",\n    \"marathonID\": 2,\n    \"splits\": [\n        \"00:39:36\",\n        \"01:17:12\",\n        \"02:00:10\",\n        \"02:58:55\",\n        \"03:08:16\",\n        \"04:27:14\",\n        \"05:37:13\",\n        \"06:39:07\",\n        \"07:41:23\"\n    ],\n    \"state\": \"GA\",\n    \"time\": \"07:58:14\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/marathon-app/v1/results",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"marathon-app",
+								"v1",
+								"results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Backend: Update Result API",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"age\": 34,\n    \"bib\": \"35266\",\n    \"city\": \"Alpharetta\",\n    \"country\": \"PER\",\n    \"firstName\": \"Cesar\",\n    \"gender\": \"m\",    \n    \"lastName\": \"Rios\",    \n    \"splits\": [\n        \"00:49:36\",\n        \"01:17:12\",\n        \"02:00:10\",\n        \"02:58:55\",\n        \"03:08:16\",\n        \"04:27:14\",\n        \"05:37:13\",\n        \"06:39:07\",\n        \"07:41:23\"\n    ],\n    \"state\": \"GA\",\n    \"time\": \"07:58:14\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/marathon-app/v1/results/26416",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"marathon-app",
+								"v1",
+								"results",
+								"26416"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Backend: Delete Result API",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/marathon-app/v1/results/26412",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"marathon-app",
+								"v1",
+								"results",
+								"26412"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API List Results",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiMTAwODMxZC00NjgzLTQ0NWUtYjZiZC0wMmMzY2ZhMTZmZGEifQ.-UU5qRh1uDuKo7sFEtGYxplUO57BhRey5e0eA722xOM",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://global-marathon-api.herokuapp.com/v1/results",
+					"protocol": "https",
+					"host": [
+						"global-marathon-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Retrieve Result",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiMTAwODMxZC00NjgzLTQ0NWUtYjZiZC0wMmMzY2ZhMTZmZGEifQ.-UU5qRh1uDuKo7sFEtGYxplUO57BhRey5e0eA722xOM",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://global-marathon-api.herokuapp.com/v1/results/26410",
+					"protocol": "https",
+					"host": [
+						"global-marathon-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"results",
+						"26410"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Result",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiMTAwODMxZC00NjgzLTQ0NWUtYjZiZC0wMmMzY2ZhMTZmZGEifQ.-UU5qRh1uDuKo7sFEtGYxplUO57BhRey5e0eA722xOM",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"age\": 34,\n    \"bib\": \"35266\",\n    \"city\": \"Alpharetta\",\n    \"country\": \"PER\",\n    \"firstName\": \"Cesar\",\n    \"gender\": \"m\",    \n    \"lastName\": \"Rios\",\n    \"marathonID\": 2,\n    \"splits\": [\n        \"00:39:36\",\n        \"01:17:12\",\n        \"02:00:10\",\n        \"02:58:55\",\n        \"03:08:16\",\n        \"04:27:14\",\n        \"05:37:13\",\n        \"06:39:07\",\n        \"07:41:23\"\n    ],\n    \"state\": \"GA\",\n    \"time\": \"07:58:14\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://global-marathon-api.herokuapp.com/v1/results",
+					"protocol": "https",
+					"host": [
+						"global-marathon-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Update Result",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiMTAwODMxZC00NjgzLTQ0NWUtYjZiZC0wMmMzY2ZhMTZmZGEifQ.-UU5qRh1uDuKo7sFEtGYxplUO57BhRey5e0eA722xOM",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"age\": 34,\n    \"bib\": \"35266\",\n    \"city\": \"Alpharetta\",\n    \"country\": \"PER\",\n    \"firstName\": \"Cesar\",\n    \"gender\": \"m\",    \n    \"lastName\": \"Rios\",    \n    \"splits\": [\n        \"00:49:36\",\n        \"01:17:12\",\n        \"02:00:10\",\n        \"02:58:55\",\n        \"03:08:16\",\n        \"04:27:14\",\n        \"05:37:13\",\n        \"06:39:07\",\n        \"07:41:23\"\n    ],\n    \"state\": \"GA\",\n    \"time\": \"07:58:14\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://global-marathon-api.herokuapp.com/v1/results/26412",
+					"protocol": "https",
+					"host": [
+						"global-marathon-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"results",
+						"26412"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Marathon Result",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiMTAwODMxZC00NjgzLTQ0NWUtYjZiZC0wMmMzY2ZhMTZmZGEifQ.-UU5qRh1uDuKo7sFEtGYxplUO57BhRey5e0eA722xOM",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://global-marathon-api.herokuapp.com/v1/results/26412",
+					"protocol": "https",
+					"host": [
+						"global-marathon-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"results",
+						"26412"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Marathons",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiMTAwODMxZC00NjgzLTQ0NWUtYjZiZC0wMmMzY2ZhMTZmZGEifQ.-UU5qRh1uDuKo7sFEtGYxplUO57BhRey5e0eA722xOM",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://global-marathon-api.herokuapp.com/v1/marathons",
+					"protocol": "https",
+					"host": [
+						"global-marathon-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"marathons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
