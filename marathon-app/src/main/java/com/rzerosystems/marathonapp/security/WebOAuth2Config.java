@@ -35,7 +35,7 @@ import java.util.ArrayList;
 //@Order(1000)
 public class WebOAuth2Config extends WebSecurityConfigurerAdapter {
 
-  static final String GOOGLE_LOGIN_URL = "/login/google";
+  static final String KEYCLOAK_LOGIN_URL = "/login/keycloak";
   static final String GITHUB_LOGIN_URL = "/login/github";
 
   private final WebOAuth2ConfigHelper webOAuth2ConfigHelper;
@@ -70,15 +70,15 @@ public class WebOAuth2Config extends WebSecurityConfigurerAdapter {
   private Filter ssoFilter() {
     var compositeFilter = new CompositeFilter();
     var filters = new ArrayList<Filter>();
-    filters.add(googleOAuth2AuthProcessingFilter());
+    filters.add(keycloakOAuth2AuthProcessingFilter());
     filters.add(githubOAuth2AuthProcessingFilter());
     compositeFilter.setFilters(filters);
     return compositeFilter;
   }
 
-  private Filter googleOAuth2AuthProcessingFilter() {
+  private Filter keycloakOAuth2AuthProcessingFilter() {
     var webOAuth2AuthProcessingFilter =
-        new WebOAuth2AuthProcessingFilter(GOOGLE_LOGIN_URL, googleClientResource());
+        new WebOAuth2AuthProcessingFilter(KEYCLOAK_LOGIN_URL, keycloakClientResource());
     webOAuth2AuthProcessingFilter.init();
     return webOAuth2AuthProcessingFilter;
   }
@@ -91,8 +91,8 @@ public class WebOAuth2Config extends WebSecurityConfigurerAdapter {
   }
 
   @Bean
-  @ConfigurationProperties("google")
-  ClientResources googleClientResource() {
+  @ConfigurationProperties("keycloak")
+  ClientResources keycloakClientResource() {
     return new ClientResources();
   }
 
